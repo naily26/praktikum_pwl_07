@@ -27,6 +27,10 @@
             <div class="form-group"> 
                 <label for="Nama">Nama</label> 
                 <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
+            </div>
+            <div class="form-group"> 
+                <label for="email">E-mail</label> 
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="email" > 
             </div> 
             <div class="form-group"> 
                 <label for="Kelas">Kelas</label>
@@ -39,6 +43,10 @@
             <div class="form-group"> 
                 <label for="No_Handphone">No_Handphone</label> 
                 <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone" aria-describedby="No_Handphone" > 
+            </div> 
+            <div class="form-group"> 
+                <label for="tanggal_lahir">Tanggal_Lahir</label> 
+                <input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" aria-describedby="tanggal_lahir" > 
             </div> 
             <button type="submit" class="btn btn-primary">Submit</button> 
         </form> 
