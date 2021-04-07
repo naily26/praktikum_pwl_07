@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="Kelas">Kelas</label>
-                    <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas_id }}" ariadescribedby="Kelas" >
+                    <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas->nama_kelas }}" ariadescribedby="Kelas" >
                 </div>
                 <div class="form-group">
                     <label for="Jurusan">Jurusan</label>
