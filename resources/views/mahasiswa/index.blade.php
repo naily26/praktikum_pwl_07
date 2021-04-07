@@ -15,15 +15,12 @@
             <p>{{ $message }}</p>
         </div>
         @endif
-        <form method="post" action="{{url('cari')}}" id="myForm">
-            @csrf
-                <div class="form-group">
-                <label for="Nim">Cari</label>
-                <input type="text"name="nim"class="form-control"id="Nim"aria-describedby="Nim"  placeholder="Cari bedasarkan nim">
-                </div>
-                <button type="submit" class="btn btn-success mt-3">
-            cari
-            </button>
+        <form method="get" action="{{route('mahasiswa.search')}}" id="myForm">
+            <div class="form-group">
+            
+            <input type="search"name="keyword"class="form-control"id="keyword"aria-describedby="keyword"  placeholder="Ketikkan yang dicari">
+            </div>
+            <button type="submit" class="btn btn-success mt-3">search</button>
         </form>
         <table class="table table-bordered">
             <tr>

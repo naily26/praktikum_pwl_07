@@ -21,4 +21,5 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', MahasiswaController::class);
-Route::post('cari',[CariController::class,'search']);
+//Route::post('cari',[CariController::class,'search']);
+Route::get('mahasiswa/search/data', [MahasiswaController::class, 'search'])->name('mahasiswa.search');
