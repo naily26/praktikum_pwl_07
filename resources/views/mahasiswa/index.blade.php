@@ -38,7 +38,7 @@
                     <td>{{  $mhs->nim }}</td>
                     <td>{{  $mhs->nama }}</td>
                     <td>{{  $mhs->email }}</td>
-                    <td>{{  $mhs->kelas }}</td>
+                    <td>{{  $mhs->kelas->nama_kelas }}</td>
                     <td>{{  $mhs->jurusan }}</td>
                     <td>{{  $mhs->no_handphone }}</td>
                     <td>{{  $mhs->tanggal_lahir }}</td>
@@ -54,5 +54,5 @@
                 </tr>              
             @endforeach
         </table>
-        {{ $mahasiswa->links("pagination::bootstrap-4") }}
+        {{ $paginate->links("pagination::bootstrap-4") }}
 @endsection

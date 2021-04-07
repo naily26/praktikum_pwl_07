@@ -15,9 +15,9 @@ class MahasiswaController extends Controller
     public function index()
     {
         //fungsi eloquent menampilkan data menggunakan pagination 
-        $mahasiswa = Mahasiswa::with('kelas')->get();// Mengambil semua isi tabel 
-        $paginate = Mahasiswa::orderBy('id_mahasiswa', 'asc')->paginate(3);
-        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa, 'paginate' => $paginate])
+        $mahasiswa = Mahasiswa::with('kelas')->get();
+        $paginate = Mahasiswa::orderBy('nim', 'asc')->paginate(3);
+        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa, 'paginate' => $paginate]);
     }
 
     /**
@@ -27,7 +27,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create');
+        $kelas = Kelas::all();
+        return view('mahasiswa.create', ['kelas' => $kelas]);
     }
 
     /**
@@ -43,7 +44,7 @@ class MahasiswaController extends Controller
             'Nim' => 'required', 
             'Nama' => 'required', 
             'email' => 'required',
-            'Kelas' => 'required', 
+            'kelas_id' => 'required', 
             'Jurusan' => 'required', 
             'No_Handphone' => 'required', 
             'tanggal_lahir' => 'required',
@@ -97,7 +98,7 @@ class MahasiswaController extends Controller
             'Nim' => 'required', 
             'Nama' => 'required',
             'email' => 'required', 
-            'Kelas' => 'required', 
+            'kelas_id' => 'required', 
             'Jurusan' => 'required', 
             'No_Handphone' => 'required', 
             'tanggal_lahir' => 'required',
@@ -128,7 +129,7 @@ class MahasiswaController extends Controller
         $keyword = $request->keyword;
         $mahasiswa = Mahasiswa::where('nim', 'like', '%' .$keyword. '%')
         ->orWhere('nama', 'like', '%' .$keyword. '%')
-        ->orWhere('kelas', 'like', '%' .$keyword. '%')
+        ->orWhere('kelas_id', 'like', '%' .$keyword. '%')
         ->orWhere('email', 'like', '%' .$keyword. '%')
         ->orWhere('jurusan', 'like', '%' .$keyword. '%')
         ->paginate(5);
