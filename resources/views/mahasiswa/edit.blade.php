@@ -33,10 +33,14 @@
                     <label for="email">E-mail</label>
                     <input type="email" name="email" class="form-control" id="email" value="{{ $Mahasiswa->email }}" ariadescribedby="email" >
                 </div>
-                <div class="form-group">
-                    <label for="Kelas">Kelas</label>
-                    <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas->nama_kelas }}" ariadescribedby="Kelas" >
-                </div>
+                <div class="form-group"> 
+                    <label for="Kelas_Id">Kelas</label>
+                    <select class="form-control" name="Kelas_Id">
+                        @foreach($kelas as $kls)
+                        <option  value="{{$kls->id }}" {{$Mahasiswa->Kelas_Id== $kls->id? 'selected' : ''}} name="Kelas_Id"  id="Kelas_Id">{{$kls->nama_kelas}}</option>
+                        @endforeach
+                    </select>
+                </div> 
                 <div class="form-group">
                     <label for="Jurusan">Jurusan</label>
                     <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" ariadescribedby="Jurusan" >
