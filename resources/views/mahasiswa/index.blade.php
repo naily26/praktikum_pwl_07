@@ -30,10 +30,10 @@
             <th>Kelas</th>
             <th>Jurusan</th>
             <th>No_Handphone</th>
-            <th>Tanggal_Lahir</th>
+            <th>tanggal_lahir</th>
             <th width="280px">Action</th>
             </tr>
-            @foreach ($mahasiswa as $mhs)
+            @foreach ($paginate as $mhs)
                 <tr>
                     <td>{{  $mhs->nim }}</td>
                     <td>{{  $mhs->nama }}</td>
