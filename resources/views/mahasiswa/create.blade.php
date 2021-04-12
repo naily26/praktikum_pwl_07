@@ -33,10 +33,10 @@
                 <input type="email" name="Email" class="form-control" id="email" aria-describedby="email" > 
             </div> 
             <div class="form-group"> 
-                <label for="Kelas">Kelas</label>
-                <select class="form-control" name="Kelas">
+                <label for="Kelas_Id">Kelas</label>
+                <select class="form-control" name="Kelas_Id">
                     @foreach($kelas as $kls)
-                    <option  value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
+                    <option  value="{{$kls->id }}" name="Kelas_Id"  id="Kelas_Id">{{$kls->nama_kelas}}</option>
                     @endforeach
                 </select>
             </div> 

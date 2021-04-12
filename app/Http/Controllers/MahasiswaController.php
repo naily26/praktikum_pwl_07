@@ -43,24 +43,25 @@ class MahasiswaController extends Controller
          $request->validate([
             'Nim' => 'required',
             'Nama' => 'required',
-            'Kelas' => 'required',
+            'Kelas_Id' => 'required',
             'Jurusan' => 'required',
             'No_Handphone' => 'required',
             'Email' => 'required',
             'tanggal_lahir' => 'required',
         ]);
+        //dd($request->all());
         $mahasiswa = new Mahasiswa;
         $mahasiswa->nim = $request->get('Nim');
         $mahasiswa->nama = $request->get('Nama');
-        
+        //$mahasiswa->kelas_id = $request
         $mahasiswa->jurusan = $request->get('Jurusan');
         $mahasiswa->no_handphone = $request->get('No_Handphone');
         $mahasiswa->email = $request->get('Email');
         $mahasiswa->tanggal_lahir = $request->get('tanggal_lahir');
-        $mahasiswa->save();
+        
 
         $kelas = new Kelas;
-        $kelas->id = $request->get('Kelas');
+        $kelas->id = $request->get('Kelas_Id');
 
         //fungsi eloquent untuk menambah data dengan relasi belongsTo
         $mahasiswa->kelas()->associate($kelas);
